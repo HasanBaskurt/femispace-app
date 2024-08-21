@@ -26,12 +26,9 @@ class _SplashViewState extends State<SplashView> {
   }
   @override
   Widget build(BuildContext context){
-    return Container(
-      color:const Color(0xffffffff),
-      child: Scaffold(
-        backgroundColor: const Color(0xffffffff),
-        body: Container(child: Center(child: Text('FemiSpace',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),),),
-      ),
+    return const  Scaffold(
+      backgroundColor:  Color(0xffffffff),
+      body: Center(child: Text('FemiSpace',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   final BuildContext context;
   AppColors({required this.context});
-  late final ColorScheme _themeColor = Theme.of(context).colorScheme;
+  //late final ColorScheme _themeColor = Theme.of(context).colorScheme;
    Color greenBackgroundColor = const  Color(0XFF56ac96);
    Color titleWhiteColor =  const  Color(0XFFfefcfc);
   
@@ -16,6 +16,10 @@ class AppColors {
    Color fourthBoxColor = const  Color(0XFFfedf89);
    Color fourthBoxIconColor = const  Color(0XFFb54708);
    Color blackColor = Colors.black;
+   Color whiteColor = const  Color(0XFFffffff);
+   Color purpleColor = const  Color(0XFF8d43a4);
+   Color greyColor = Colors.grey.shade300;
+   Color rowButtonPassiveColor = const  Color(0XFFf6f7f9);
    
   // appbar color code :  56ac96
   // appbar title color code :  fefcfc

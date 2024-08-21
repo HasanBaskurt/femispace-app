@@ -15,7 +15,7 @@ class NutritionsInformationArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appColors = AppColors(context: context);
-    final appFakeData = AppFakeData(appColors: appColors);
+    final boxModelList = AppFakeData.getBoxModelList(appColors: appColors);
 
     return Container(
       padding: EdgeInsets.symmetric(
@@ -47,7 +47,7 @@ class NutritionsInformationArea extends StatelessWidget {
           GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: appFakeData.fakeBoxDataList.length,
+              itemCount: boxModelList.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 1.15,
@@ -56,7 +56,7 @@ class NutritionsInformationArea extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 return _createBox(
-                    boxModel: appFakeData.fakeBoxDataList[index],
+                    boxModel: boxModelList[index],
                     appColors: appColors);
               }),
         ],
