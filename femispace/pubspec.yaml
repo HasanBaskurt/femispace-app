@@ -23,7 +23,21 @@ dependencies:
 
   # For App Logo
   flutter_launcher_icons: ^0.13.1
+
+  # Router
   go_router: ^14.2.6
+
+  # Screen Size Control
+  flutter_screenutil: ^5.9.3
+
+  # Native Splash
+  flutter_native_splash: ^2.4.1
+
+  # Logger
+  logger: ^2.4.0
+
+  # Text Size Control
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +49,14 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/images/app_logo.png"
+
+
+# Native Splash Configure
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+  color: "#ffffff"
 
 
 flutter:
