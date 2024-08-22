@@ -22,7 +22,7 @@ class NutritionsInformationArea extends StatelessWidget {
           horizontal: AppSize.getScreenWidthRatio(width: 16),
           vertical: AppSize.getScreenHeightRatio(height: 25)
           ),
-      color: appColors.greenBackgroundColor,
+      color: appColors.greenBackGroundColor,
       child: Column(
         children: [
           
@@ -161,7 +161,7 @@ class NutritionsInformationArea extends StatelessWidget {
                 width: AppSize.getScreenWidthRatio(width: 58),
                 padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 5),
                 decoration: BoxDecoration(
-                  color: appColors.greenBackgroundColor.withOpacity(0.1),
+                  color: appColors.greenBackGroundColor.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(
                       AppSize.getScreenRadiusRatio(radius: 20)),
                 ),
@@ -172,7 +172,7 @@ class NutritionsInformationArea extends StatelessWidget {
                     Flexible(
                       child: Icon(
                         Icons.arrow_upward_rounded,
-                        color: appColors.greenBackgroundColor,
+                        color: appColors.greenBackGroundColor,
                         size: AppSize.getScreenHeightRatio(height: 13),
                       ),
                     ),
@@ -186,7 +186,7 @@ class NutritionsInformationArea extends StatelessWidget {
                         '${boxModel.percentileValue}%',
                         style: GoogleFonts.roboto(
                             height: 0,
-                            color: appColors.greenBackgroundColor,
+                            color: appColors.greenBackGroundColor,
                             fontSize: 13,
                             fontWeight: AppTextFontWeight.MEDIUM),
                       ),

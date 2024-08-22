@@ -5,6 +5,7 @@ import 'package:femispace/feature/nutritions/view/widgets/nutritions_information
 import 'package:femispace/feature/nutritions/view/widgets/row_buttons_area.dart';
 import 'package:femispace/feature/nutritions/view/widgets/section_area.dart';
 import 'package:femispace/feature/nutritions/view/widgets/select_date_or_period_button.dart';
+import 'package:femispace/feature/nutritions/view/widgets/summary_boxes_area.dart';
 import 'package:flutter/material.dart';
 
 class NutritionsView extends StatelessWidget {
@@ -12,7 +13,7 @@ class NutritionsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AppColors appColors=AppColors(context: context);
+    final AppColors appColors = AppColors(context: context);
     return Scaffold(
       backgroundColor: appColors.whiteColor,
       body: _buildBody(),
@@ -21,24 +22,49 @@ class NutritionsView extends StatelessWidget {
 
   Widget _buildBody() {
     return ListView(
-      children:  [
-       const  NutritionsInformationArea(),
-       Padding(
-   
-      padding:  EdgeInsets.all(AppSize.getScreenHeightRatio(height: 16),),
-         child:  Column(
-           children: [
+      children: [
+        const NutritionsInformationArea(),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSize.getScreenHeightRatio(height: 16),
+          ),
+          child: Column(
+            children: [
+              SizedBox(
+                height: AppSize.getScreenHeightRatio(height: 16),
+              ),
               const SelectionDateOrPeriodButton(),
-               SizedBox(height: AppSize.getScreenHeightRatio(height: 20),),
-             const  RowButtonsArea(),
-               SizedBox(height: AppSize.getScreenHeightRatio(height: 16),),
-             
-             const  SectionArea()
-           ],
-         ),
-       ),
-       const NutritionsDivider(),
-
+              SizedBox(
+                height: AppSize.getScreenHeightRatio(height: 20),
+              ),
+              const RowButtonsArea(),
+              SizedBox(
+                height: AppSize.getScreenHeightRatio(height: 16),
+              ),
+              const SectionArea(),
+              SizedBox(
+                height: AppSize.getScreenHeightRatio(height: 16),
+              ),
+            ],
+          ),
+        ),
+        const NutritionsDivider(),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSize.getScreenHeightRatio(height: 16),
+          ),
+          child: Column(
+            children: [
+              SizedBox(
+                height: AppSize.getScreenHeightRatio(height: 16),
+              ),
+              const SummaryBoxesArea(),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: AppSize.getScreenHeightRatio(height: 50),
+        ),
       ],
     );
   }

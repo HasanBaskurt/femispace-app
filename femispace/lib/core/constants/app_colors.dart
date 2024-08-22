@@ -4,7 +4,7 @@ class AppColors {
   final BuildContext context;
   AppColors({required this.context});
   //late final ColorScheme _themeColor = Theme.of(context).colorScheme;
-   Color greenBackgroundColor = const  Color(0XFF56ac96);
+   Color greenBackGroundColor = const  Color(0XFF56ac96);
    Color titleWhiteColor =  const  Color(0XFFfefcfc);
   
    Color firstBoxColor = const  Color(0XFFfcddec);
@@ -21,6 +21,16 @@ class AppColors {
    Color greyColor = Colors.grey.shade300;
    Color darkGreyColor = Colors.grey.shade600;
    Color passiveGreyColor = const  Color(0XFFf6f7f9);
+   Color blueColor = const  Color(0XFF3538cd);
+   Color orangeColor = const  Color(0XFFdc6803);
+   Color darkRedColor = const  Color(0XFF912018);
+   Color summaryBoxColor1 = const  Color(0XFFe7e7fc);
+   Color summaryBoxColor2 = const  Color(0XFFfcf2e9);
+   Color summaryBoxColor3 = const  Color(0XFFf9eae9);
+
+   
+
+   
    
   // appbar color code :  56ac96
   // appbar title color code :  fefcfc

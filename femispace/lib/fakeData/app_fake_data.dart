@@ -1,6 +1,7 @@
 import 'package:femispace/core/constants/app_colors.dart';
 import 'package:femispace/feature/nutritions/model/box_model.dart';
 import 'package:femispace/feature/nutritions/model/row_button_model.dart';
+import 'package:femispace/feature/nutritions/model/summary_box_model.dart';
 import 'package:flutter/material.dart';
 
 class AppFakeData {
@@ -12,8 +13,36 @@ class AppFakeData {
     RowButtonModel(id: 5, name: 'Favorite recipes', buttonFunction: () {}),
   ];
 
+  static List<SummaryBoxModel> getSummaryBoxModelList(
+      {required AppColors appColors}) {
+    List<SummaryBoxModel> fakeSummaryBoxModelList = [
+      SummaryBoxModel(
+          name: 'Raw food',
+          percentileValue: 20,
+          kcalValue: 400,
+          positiveValue: true,
+          boxColor: appColors.summaryBoxColor1,
+          progressColor: appColors.blueColor),
+      SummaryBoxModel(
+          name: 'Minimally processed food',
+          percentileValue: 30,
+          kcalValue: 600,
+          positiveValue: true,
+          boxColor: appColors.summaryBoxColor2,
+          progressColor: appColors.orangeColor),
+      SummaryBoxModel(
+          name: 'Highly processed food',
+          percentileValue: 50,
+          kcalValue: 1000,
+          positiveValue: false,
+          boxColor: appColors.summaryBoxColor3,
+          progressColor: appColors.darkRedColor),
+    ];
+    return fakeSummaryBoxModelList;
+  }
+
   static List<BoxModel> getBoxModelList({required AppColors appColors}) {
-    List<BoxModel> fakeBoxDataList = [
+    List<BoxModel> fakeBoxModelList = [
       BoxModel(
           name: 'Food quality score',
           iconColor: appColors.firstBoxIconColor,
@@ -47,6 +76,6 @@ class AppFakeData {
           percentileValue: 20,
           valueOfHundredActive: false),
     ];
-    return fakeBoxDataList;
+    return fakeBoxModelList;
   }
 }
