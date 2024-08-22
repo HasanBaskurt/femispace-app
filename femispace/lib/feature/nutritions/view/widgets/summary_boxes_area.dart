@@ -3,11 +3,11 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:femispace/core/constants/app_colors.dart';
 import 'package:femispace/core/constants/app_size.dart';
 import 'package:femispace/core/constants/app_text_font_weight.dart';
+import 'package:femispace/core/constants/custom_linear_indicator.dart';
 import 'package:femispace/core/constants/fakeData/app_fake_data.dart';
 import 'package:femispace/feature/nutritions/model/summary_box_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class SummaryBoxesArea extends StatelessWidget {
   const SummaryBoxesArea({super.key});
@@ -22,9 +22,9 @@ class SummaryBoxesArea extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
           children: List.generate(summaryBoxModelList.length, (index) {
-        return 
-  FadeInUp(    duration:const Duration(milliseconds: 500), 
-            delay:  Duration(milliseconds: 1950+(index*100)),
+        return FadeInUp(
+          duration: const Duration(milliseconds: 500),
+          delay: Duration(milliseconds: 1950 + (index * 100)),
           child: Row(
             children: [
               _createBox(
@@ -156,18 +156,15 @@ class SummaryBoxesArea extends StatelessWidget {
                     flex: 2,
                     child: Align(
                         alignment: Alignment.bottomCenter,
-                        child: LinearPercentIndicator(
-                          padding: EdgeInsets.zero,
+                        child: CustomLinearIndicator(
                           lineHeight: AppSize.getScreenHeightRatio(height: 10),
-                          animation: true,
-                          animationDuration: 50,
                           percent: ((summaryBoxModel.percentileValue > 100
                                   ? 100
                                   : summaryBoxModel.percentileValue) /
                               100),
                           progressColor: summaryBoxModel.progressColor,
                           backgroundColor: appColors.whiteColor,
-                          barRadius: const Radius.circular(16),
+                          borderRadiusValue: 16,
                         )))
               ],
             ),

@@ -40,8 +40,8 @@ dependencies:
   # Text Size Control
   auto_size_text: ^3.0.0
 
-  # Precent Indicator
-  percent_indicator: ^4.2.3
+
+  # Animation
   animate_do: ^3.3.4
 
 dev_dependencies:
