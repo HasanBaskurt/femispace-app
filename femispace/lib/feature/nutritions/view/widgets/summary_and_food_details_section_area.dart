@@ -5,8 +5,8 @@ import 'package:femispace/core/constants/app_text_font_weight.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SectionArea extends StatelessWidget {
-  const SectionArea({super.key});
+class SummaryAndFoodDetailsSectionArea extends StatelessWidget {
+  const SummaryAndFoodDetailsSectionArea({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +27,8 @@ class SectionArea extends StatelessWidget {
             margin: EdgeInsets.zero,
             color: appColors.whiteColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(AppSize.getScreenRadiusRatio(
-                  radius: 8)), // Köşeleri yuvarlatma
+              borderRadius: BorderRadius.circular(
+                  AppSize.getScreenRadiusRatio(radius: 8)),
             ),
             child: Center(
               child: AutoSizeText(
@@ -44,7 +44,9 @@ class SectionArea extends StatelessWidget {
                       fontWeight: AppTextFontWeight.REGULAR)),
             ),
           )),
-          SizedBox(width: AppSize.getScreenRadiusRatio(radius: 8),),
+          SizedBox(
+            width: AppSize.getScreenRadiusRatio(radius: 8),
+          ),
           Expanded(
               child: AutoSizeText(
                   minFontSize: 16,

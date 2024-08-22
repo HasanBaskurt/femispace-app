@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:femispace/core/constants/app_colors.dart';
 import 'package:femispace/core/constants/app_size.dart';
 import 'package:femispace/core/constants/app_text_font_weight.dart';
-import 'package:femispace/fakeData/app_fake_data.dart';
+import 'package:femispace/core/constants/fakeData/app_fake_data.dart';
 import 'package:femispace/feature/nutritions/model/summary_box_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,9 +24,13 @@ class SummaryBoxesArea extends StatelessWidget {
         return Row(
           children: [
             _createBox(
-                summaryBoxModel: summaryBoxModelList[index], appColors: appColors),   Visibility(
-                visible: AppFakeData.rowButtonList.length-1!=index,
-                child:SizedBox(width:AppSize.getScreenWidthRatio(width: 12) ,) )
+                summaryBoxModel: summaryBoxModelList[index],
+                appColors: appColors),
+            Visibility(
+                visible: AppFakeData.rowButtonList.length - 1 != index,
+                child: SizedBox(
+                  width: AppSize.getScreenWidthRatio(width: 12),
+                ))
           ],
         );
       })),
@@ -99,11 +103,17 @@ class SummaryBoxesArea extends StatelessWidget {
                             padding: const EdgeInsets.all(4),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: (summaryBoxModel.positiveValue? appColors.greenBackGroundColor:appColors.darkRedColor)
+                                color: (summaryBoxModel.positiveValue
+                                        ? appColors.greenBackGroundColor
+                                        : appColors.darkRedColor)
                                     .withOpacity(.1)),
                             child: Icon(
-                            summaryBoxModel.positiveValue?  Icons.arrow_upward_rounded:Icons.arrow_downward_rounded,
-                              color: summaryBoxModel.positiveValue? appColors.greenBackGroundColor:appColors.darkRedColor,
+                              summaryBoxModel.positiveValue
+                                  ? Icons.arrow_upward_rounded
+                                  : Icons.arrow_downward_rounded,
+                              color: summaryBoxModel.positiveValue
+                                  ? appColors.greenBackGroundColor
+                                  : appColors.darkRedColor,
                               size: AppSize.getScreenHeightRatio(height: 14),
                             ),
                           ),
@@ -133,11 +143,12 @@ class SummaryBoxesArea extends StatelessWidget {
                           fontWeight: AppTextFontWeight.MEDIUM),
                     ),
                   ),
-                ),  SizedBox(
+                ),
+                SizedBox(
                   height: AppSize.getScreenHeightRatio(height: 3),
                 ),
                 Expanded(
-                  flex: 2,
+                    flex: 2,
                     child: Align(
                         alignment: Alignment.bottomCenter,
                         child: LinearPercentIndicator(
@@ -152,7 +163,6 @@ class SummaryBoxesArea extends StatelessWidget {
                           progressColor: summaryBoxModel.progressColor,
                           backgroundColor: appColors.whiteColor,
                           barRadius: const Radius.circular(16),
-                        
                         )))
               ],
             ),

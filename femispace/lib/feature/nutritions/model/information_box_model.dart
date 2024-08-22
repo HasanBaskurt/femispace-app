@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BoxModel {
+class InformationBoxModel {
   String name;
   IconData iconData;
   Color boxColor;
@@ -8,7 +8,7 @@ class BoxModel {
   int percentileValue;
   int value;
   bool valueOfHundredActive;
-  BoxModel({
+  InformationBoxModel({
     required this.name,
     required this.iconColor,
     required this.boxColor,

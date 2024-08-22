@@ -13,7 +13,7 @@ class SelectionDateOrPeriodButton extends StatelessWidget {
     final appColors = AppColors(context: context);
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             
             shape:
                 RoundedRectangleBorder(
@@ -34,7 +34,8 @@ class SelectionDateOrPeriodButton extends StatelessWidget {
         },
         child: Row(
           children: [
-            Flexible(
+            Expanded(
+              flex: 4,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -99,15 +100,13 @@ class SelectionDateOrPeriodButton extends StatelessWidget {
                 ],
               ),
             ),
-          Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Icon(Icons.keyboard_arrow_down_sharp,color: appColors.blackColor,
-                    size: AppSize.getScreenHeightRatio(height: 28),)
-                  ),
-                ],
-              ),
+          Expanded(
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Icon(Icons.keyboard_arrow_down_sharp,color: appColors.blackColor,
+              size: AppSize.getScreenHeightRatio(height: 28),),
+            ),
+          ),
           ],
         )
         );

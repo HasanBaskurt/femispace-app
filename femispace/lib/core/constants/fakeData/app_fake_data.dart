@@ -1,5 +1,5 @@
 import 'package:femispace/core/constants/app_colors.dart';
-import 'package:femispace/feature/nutritions/model/box_model.dart';
+import 'package:femispace/feature/nutritions/model/information_box_model.dart';
 import 'package:femispace/feature/nutritions/model/row_button_model.dart';
 import 'package:femispace/feature/nutritions/model/summary_box_model.dart';
 import 'package:femispace/feature/nutritions/model/summary_list_model.dart';
@@ -67,9 +67,9 @@ class AppFakeData {
     return fakeSummaryBoxModelList;
   }
 
-  static List<BoxModel> getBoxModelList({required AppColors appColors}) {
-    List<BoxModel> fakeBoxModelList = [
-      BoxModel(
+  static List<InformationBoxModel> getBoxModelList({required AppColors appColors}) {
+    List<InformationBoxModel> fakeInformationBoxModelList = [
+      InformationBoxModel(
           name: 'Food quality score',
           iconColor: appColors.firstBoxIconColor,
           boxColor: appColors.firstBoxColor,
@@ -77,7 +77,7 @@ class AppFakeData {
           value: 70,
           percentileValue: 20,
           valueOfHundredActive: true),
-      BoxModel(
+      InformationBoxModel(
           name: 'Nutrition personel score',
           iconColor: appColors.secondBoxIconColor,
           boxColor: appColors.secondBoxColor,
@@ -85,7 +85,7 @@ class AppFakeData {
           value: 70,
           percentileValue: 20,
           valueOfHundredActive: true),
-      BoxModel(
+      InformationBoxModel(
           name: 'Average GI',
           iconColor: appColors.thirdBoxIconColor,
           boxColor: appColors.thirdBoxColor,
@@ -93,7 +93,7 @@ class AppFakeData {
           value: 10,
           percentileValue: 20,
           valueOfHundredActive: false),
-      BoxModel(
+      InformationBoxModel(
           name: 'Average GL',
           iconColor: appColors.fourthBoxIconColor,
           boxColor: appColors.fourthBoxColor,
@@ -102,6 +102,6 @@ class AppFakeData {
           percentileValue: 20,
           valueOfHundredActive: false),
     ];
-    return fakeBoxModelList;
+    return fakeInformationBoxModelList;
   }
 }

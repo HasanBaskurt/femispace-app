@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:femispace/core/constants/app_colors.dart';
 import 'package:femispace/core/constants/app_size.dart';
 import 'package:femispace/core/constants/app_text_font_weight.dart';
-import 'package:femispace/fakeData/app_fake_data.dart';
+import 'package:femispace/core/constants/fakeData/app_fake_data.dart';
 import 'package:femispace/feature/nutritions/model/summary_list_model.dart';
 import 'package:femispace/feature/nutritions/view/widgets/nutritions_divider.dart';
 import 'package:flutter/material.dart';
@@ -18,29 +18,34 @@ class SummaryListArea extends StatelessWidget {
       children: List.generate(AppFakeData.summaryListModelList.length, (index) {
         return Column(
           children: [
-             SizedBox(
-              height: AppSize.getScreenHeightRatio(height: 8),
-            ), _createListTile(appColors:appColors, summaryListModel: AppFakeData.summaryListModelList[index]),
             SizedBox(
               height: AppSize.getScreenHeightRatio(height: 8),
             ),
-          const  NutritionsDivider(),
+            _createListTile(
+                appColors: appColors,
+                summaryListModel: AppFakeData.summaryListModelList[index]),
+            SizedBox(
+              height: AppSize.getScreenHeightRatio(height: 8),
+            ),
+            const NutritionsDivider(),
           ],
         );
       }),
     );
   }
 
-  ListTile _createListTile({ required SummaryListModel summaryListModel, required AppColors appColors}) {
+  ListTile _createListTile(
+      {required SummaryListModel summaryListModel,
+      required AppColors appColors}) {
     return ListTile(
-      contentPadding: EdgeInsets.zero  ,
+      contentPadding: EdgeInsets.zero,
       title: AutoSizeText(
         minFontSize: 16,
         maxFontSize: 20,
         textAlign: TextAlign.left,
         overflow: TextOverflow.ellipsis,
         maxLines: 1,
-      summaryListModel.name,
+        summaryListModel.name,
         style: GoogleFonts.roboto(
             height: 0,
             color: appColors.blackColor,
@@ -70,7 +75,9 @@ class SummaryListArea extends StatelessWidget {
                       fontWeight: AppTextFontWeight.BOLD),
                 ),
               ),
-             const SizedBox(width: 4,),
+               SizedBox(
+                width: AppSize.getScreenWidthRatio(width: 4),
+              ),
               Flexible(
                 child: Container(
                   padding: const EdgeInsets.all(4),
@@ -93,13 +100,14 @@ class SummaryListArea extends StatelessWidget {
               ),
             ],
           ),
-
           Visibility(
-            visible: summaryListModel.kcalValue!=null,
-            child:   SizedBox(height: AppSize.getScreenHeightRatio(height: 6),),),
-         
+            visible: summaryListModel.kcalValue != null,
+            child: SizedBox(
+              height: AppSize.getScreenHeightRatio(height: 6),
+            ),
+          ),
           Visibility(
-            visible: summaryListModel.kcalValue!=null,
+            visible: summaryListModel.kcalValue != null,
             child: Flexible(
               child: AutoSizeText(
                 minFontSize: 10,

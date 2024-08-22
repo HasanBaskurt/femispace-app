@@ -3,7 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:femispace/core/constants/app_colors.dart';
 import 'package:femispace/core/constants/app_size.dart';
 import 'package:femispace/core/constants/app_text_font_weight.dart';
-import 'package:femispace/fakeData/app_fake_data.dart';
+import 'package:femispace/core/constants/fakeData/app_fake_data.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,26 +21,26 @@ class RowButtonsArea extends StatelessWidget {
           return Row(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 17,
-                  vertical:  10),
+                padding:
+                     EdgeInsets.symmetric(horizontal: AppSize.getScreenWidthRatio(width: 17), vertical: AppSize.getScreenHeightRatio(height: 10)),
                 decoration: BoxDecoration(
-                  color: selectedButtonIndex == AppFakeData.rowButtonList[index].id
-                      ? appColors.purpleColor
-                      : appColors.passiveGreyColor,
-                  borderRadius:
-                      BorderRadius.circular(AppSize.getScreenRadiusRatio(radius: 20)),
+                  color:
+                      selectedButtonIndex == AppFakeData.rowButtonList[index].id
+                          ? appColors.purpleColor
+                          : appColors.passiveGreyColor,
+                  borderRadius: BorderRadius.circular(
+                      AppSize.getScreenRadiusRatio(radius: 20)),
                 ),
                 child: Center(
                   child: AutoSizeText(
                       minFontSize: 18,
                       maxFontSize: 22,
-                      textAlign: TextAlign.left,
+                      textAlign: TextAlign.center,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 3,
                       AppFakeData.rowButtonList[index].name,
                       style: GoogleFonts.roboto(
-                          height: 1.1,
+                          height: 0,
                           color: selectedButtonIndex ==
                                   AppFakeData.rowButtonList[index].id
                               ? appColors.whiteColor
@@ -50,8 +50,10 @@ class RowButtonsArea extends StatelessWidget {
                 ),
               ),
               Visibility(
-                visible: AppFakeData.rowButtonList.length-1!=index,
-                child:SizedBox(width:AppSize.getScreenWidthRatio(width: 10) ,) )
+                  visible: AppFakeData.rowButtonList.length - 1 != index,
+                  child: SizedBox(
+                    width: AppSize.getScreenWidthRatio(width: 10),
+                  ))
             ],
           );
         }),
