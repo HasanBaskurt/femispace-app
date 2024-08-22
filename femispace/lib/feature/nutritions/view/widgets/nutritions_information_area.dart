@@ -51,7 +51,7 @@ class NutritionsInformationArea extends StatelessWidget {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 1.15,
-                crossAxisSpacing: 15,
+                crossAxisSpacing: 14,
                 mainAxisSpacing: 18,
               ),
               itemBuilder: (context, index) {
@@ -129,7 +129,7 @@ class NutritionsInformationArea extends StatelessWidget {
                             height: 0,
                             color: appColors.blackColor,
                             fontSize: 25,
-                            fontWeight: AppTextFontWeight.BOLD),
+                            fontWeight: AppTextFontWeight.BLACK),
                       ),
                     ),
                     Visibility(

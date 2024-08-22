@@ -19,7 +19,8 @@ class AppColors {
    Color whiteColor = const  Color(0XFFffffff);
    Color purpleColor = const  Color(0XFF8d43a4);
    Color greyColor = Colors.grey.shade300;
-   Color rowButtonPassiveColor = const  Color(0XFFf6f7f9);
+   Color darkGreyColor = Colors.grey.shade600;
+   Color passiveGreyColor = const  Color(0XFFf6f7f9);
    
   // appbar color code :  56ac96
   // appbar title color code :  fefcfc

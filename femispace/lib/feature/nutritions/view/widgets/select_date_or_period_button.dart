@@ -18,7 +18,7 @@ class SelectionDateOrPeriodButton extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(
                   side:  BorderSide(
-                    width: 0.3,
+                    width: 0.8,
                     color: appColors.greyColor
                   ),
                   borderRadius: BorderRadius.circular(8)),

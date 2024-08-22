@@ -23,7 +23,7 @@ class FemiSpace extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp.router(
             title: AppConstants.APP_TITLE,
-
+            debugShowCheckedModeBanner: false,
             //Theme Settings
             theme: AppCustomLightTheme().themeData,
             darkTheme: AppCustomDarkTheme().themeData,
