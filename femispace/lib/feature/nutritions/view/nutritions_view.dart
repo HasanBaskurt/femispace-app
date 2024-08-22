@@ -1,4 +1,3 @@
-
 import 'package:femispace/core/constants/app_size.dart';
 import 'package:femispace/feature/nutritions/view/widgets/nutritions_divider.dart';
 import 'package:femispace/feature/nutritions/view/widgets/nutritions_information_area.dart';
@@ -8,9 +7,22 @@ import 'package:femispace/feature/nutritions/view/widgets/summary_and_food_detai
 import 'package:femispace/feature/nutritions/view/widgets/summary_boxes_area.dart';
 import 'package:femispace/feature/nutritions/view/widgets/summary_list_area.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-class NutritionsView extends StatelessWidget {
+class NutritionsView extends StatefulWidget {
   const NutritionsView({super.key});
+
+  @override
+  State<NutritionsView> createState() => _NutritionsViewState();
+}
+
+class _NutritionsViewState extends State<NutritionsView> {
+  @override
+  void initState() {
+    // Close Native Splash
+    FlutterNativeSplash.remove();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

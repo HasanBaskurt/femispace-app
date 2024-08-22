@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:animate_do/animate_do.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:femispace/core/constants/fakeData/app_fake_data.dart';
 import 'package:femispace/feature/nutritions/model/information_box_model.dart';
@@ -27,18 +28,22 @@ class NutritionsInformationArea extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.centerLeft,
-            child: AutoSizeText(
-                minFontSize: 23,
-                maxFontSize: 27,
-                textAlign: TextAlign.left,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                'Nutritions',
-                style: GoogleFonts.roboto(
-                    height: 0,
-                    color: appColors.titleWhiteColor,
-                    fontSize: 25,
-                    fontWeight: AppTextFontWeight.SEMI_BOLD)),
+            child: FadeInLeft(
+              duration: const  Duration(milliseconds: 500),
+             delay:const  Duration(milliseconds: 250),
+              child: AutoSizeText(
+                  minFontSize: 23,
+                  maxFontSize: 27,
+                  textAlign: TextAlign.left,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  'Nutritions',
+                  style: GoogleFonts.roboto(
+                      height: 0,
+                      color: appColors.titleWhiteColor,
+                      fontSize: 25,
+                      fontWeight: AppTextFontWeight.SEMI_BOLD)),
+            ),
           ),
           SizedBox(
             height: AppSize.getScreenHeightRatio(height: 30),
@@ -54,9 +59,13 @@ class NutritionsInformationArea extends StatelessWidget {
                 mainAxisSpacing: 18,
               ),
               itemBuilder: (context, index) {
-                return _createInformationBox(
-                    informationBoxModel: informationBoxModelList[index],
-                    appColors: appColors);
+                return 
+  FadeInUp(    duration:const Duration(milliseconds: 500), 
+              delay:  Duration(milliseconds: (750+((index+1)*250))),
+                  child: _createInformationBox(
+                      informationBoxModel: informationBoxModelList[index],
+                      appColors: appColors),
+                );
               }),
         ],
       ),

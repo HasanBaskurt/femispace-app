@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:animate_do/animate_do.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:femispace/core/constants/app_colors.dart';
 import 'package:femispace/core/constants/app_size.dart';
@@ -18,43 +19,47 @@ class RowButtonsArea extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(AppFakeData.rowButtonList.length, (index) {
-          return Row(
-            children: [
-              Container(
-                padding:
-                     EdgeInsets.symmetric(horizontal: AppSize.getScreenWidthRatio(width: 17), vertical: AppSize.getScreenHeightRatio(height: 10)),
-                decoration: BoxDecoration(
-                  color:
-                      selectedButtonIndex == AppFakeData.rowButtonList[index].id
-                          ? appColors.purpleColor
-                          : appColors.passiveGreyColor,
-                  borderRadius: BorderRadius.circular(
-                      AppSize.getScreenRadiusRatio(radius: 20)),
+          return 
+  FadeInUp(    duration:const Duration(milliseconds: 500), 
+            delay:  Duration(milliseconds: 1750+(index*100)),
+            child: Row(
+              children: [
+                Container(
+                  padding:
+                       EdgeInsets.symmetric(horizontal: AppSize.getScreenWidthRatio(width: 17), vertical: AppSize.getScreenHeightRatio(height: 10)),
+                  decoration: BoxDecoration(
+                    color:
+                        selectedButtonIndex == AppFakeData.rowButtonList[index].id
+                            ? appColors.purpleColor
+                            : appColors.passiveGreyColor,
+                    borderRadius: BorderRadius.circular(
+                        AppSize.getScreenRadiusRatio(radius: 20)),
+                  ),
+                  child: Center(
+                    child: AutoSizeText(
+                        minFontSize: 18,
+                        maxFontSize: 22,
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 3,
+                        AppFakeData.rowButtonList[index].name,
+                        style: GoogleFonts.roboto(
+                            height: 0,
+                            color: selectedButtonIndex ==
+                                    AppFakeData.rowButtonList[index].id
+                                ? appColors.whiteColor
+                                : appColors.blackColor,
+                            fontSize: 20,
+                            fontWeight: AppTextFontWeight.REGULAR)),
+                  ),
                 ),
-                child: Center(
-                  child: AutoSizeText(
-                      minFontSize: 18,
-                      maxFontSize: 22,
-                      textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 3,
-                      AppFakeData.rowButtonList[index].name,
-                      style: GoogleFonts.roboto(
-                          height: 0,
-                          color: selectedButtonIndex ==
-                                  AppFakeData.rowButtonList[index].id
-                              ? appColors.whiteColor
-                              : appColors.blackColor,
-                          fontSize: 20,
-                          fontWeight: AppTextFontWeight.REGULAR)),
-                ),
-              ),
-              Visibility(
-                  visible: AppFakeData.rowButtonList.length - 1 != index,
-                  child: SizedBox(
-                    width: AppSize.getScreenWidthRatio(width: 10),
-                  ))
-            ],
+                Visibility(
+                    visible: AppFakeData.rowButtonList.length - 1 != index,
+                    child: SizedBox(
+                      width: AppSize.getScreenWidthRatio(width: 10),
+                    ))
+              ],
+            ),
           );
         }),
       ),

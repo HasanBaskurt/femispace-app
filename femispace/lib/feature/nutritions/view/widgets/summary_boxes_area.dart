@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:femispace/core/constants/app_colors.dart';
 import 'package:femispace/core/constants/app_size.dart';
@@ -21,17 +22,21 @@ class SummaryBoxesArea extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
           children: List.generate(summaryBoxModelList.length, (index) {
-        return Row(
-          children: [
-            _createBox(
-                summaryBoxModel: summaryBoxModelList[index],
-                appColors: appColors),
-            Visibility(
-                visible: AppFakeData.rowButtonList.length - 1 != index,
-                child: SizedBox(
-                  width: AppSize.getScreenWidthRatio(width: 12),
-                ))
-          ],
+        return 
+  FadeInUp(    duration:const Duration(milliseconds: 500), 
+            delay:  Duration(milliseconds: 1950+(index*100)),
+          child: Row(
+            children: [
+              _createBox(
+                  summaryBoxModel: summaryBoxModelList[index],
+                  appColors: appColors),
+              Visibility(
+                  visible: AppFakeData.rowButtonList.length - 1 != index,
+                  child: SizedBox(
+                    width: AppSize.getScreenWidthRatio(width: 12),
+                  ))
+            ],
+          ),
         );
       })),
     );

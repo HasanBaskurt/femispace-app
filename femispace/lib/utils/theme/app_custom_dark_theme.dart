@@ -10,7 +10,7 @@ final class AppCustomDarkTheme extends AppCustomTheme {
   @override
   ThemeData get themeData => ThemeData(
       useMaterial3: true,
-      fontFamily: GoogleFonts.rubik().fontFamily,
+      fontFamily: GoogleFonts.roboto().fontFamily,
       colorScheme: AppColorScheme.darkColorScheme,
       floatingActionButtonTheme: floatingActionButtonThemeData,
       splashFactory: NoSplash.splashFactory);

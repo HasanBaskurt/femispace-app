@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:femispace/core/constants/app_colors.dart';
 import 'package:femispace/core/constants/app_size.dart';
@@ -16,19 +17,23 @@ class SummaryListArea extends StatelessWidget {
     final appColors = AppColors(context: context);
     return Column(
       children: List.generate(AppFakeData.summaryListModelList.length, (index) {
-        return Column(
-          children: [
-            SizedBox(
-              height: AppSize.getScreenHeightRatio(height: 8),
-            ),
-            _createListTile(
-                appColors: appColors,
-                summaryListModel: AppFakeData.summaryListModelList[index]),
-            SizedBox(
-              height: AppSize.getScreenHeightRatio(height: 8),
-            ),
-            const NutritionsDivider(),
-          ],
+        return 
+  FadeInUp(    duration:const Duration(milliseconds: 500), 
+            delay:  Duration(milliseconds: 1950+(index*100)),
+          child: Column(
+            children: [
+              SizedBox(
+                height: AppSize.getScreenHeightRatio(height: 8),
+              ),
+              _createListTile(
+                  appColors: appColors,
+                  summaryListModel: AppFakeData.summaryListModelList[index]),
+              SizedBox(
+                height: AppSize.getScreenHeightRatio(height: 8),
+              ),
+              const NutritionsDivider(),
+            ],
+          ),
         );
       }),
     );
