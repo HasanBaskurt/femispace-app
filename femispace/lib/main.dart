@@ -4,11 +4,12 @@ import 'package:femispace/utils/routes/app_router.dart';
 import 'package:femispace/utils/theme/app_custom_dark_theme.dart';
 import 'package:femispace/utils/theme/app_custom_light_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   await AppInitialize().create();
-  runApp(const FemiSpace());
+  runApp(const ProviderScope(child: FemiSpace()));
 }
 
 class FemiSpace extends StatelessWidget {
