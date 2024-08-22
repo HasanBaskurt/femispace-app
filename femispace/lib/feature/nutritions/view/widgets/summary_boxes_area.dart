@@ -70,6 +70,7 @@ class SummaryBoxesArea extends StatelessWidget {
             child: Column(
               children: [
                 Expanded(
+                  flex: 3,
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Row(
@@ -87,7 +88,7 @@ class SummaryBoxesArea extends StatelessWidget {
                                 height: 0,
                                 color: appColors.blackColor,
                                 fontSize: 18,
-                                fontWeight: AppTextFontWeight.SEMI_BOLD),
+                                fontWeight: AppTextFontWeight.BOLD),
                           ),
                         ),
                         const SizedBox(
@@ -115,6 +116,7 @@ class SummaryBoxesArea extends StatelessWidget {
                   height: AppSize.getScreenHeightRatio(height: 3),
                 ),
                 Expanded(
+                  flex: 2,
                   child: Align(
                     alignment: Alignment.center,
                     child: AutoSizeText(
@@ -128,13 +130,14 @@ class SummaryBoxesArea extends StatelessWidget {
                           height: 0,
                           color: appColors.blackColor,
                           fontSize: 14,
-                          fontWeight: AppTextFontWeight.REGULAR),
+                          fontWeight: AppTextFontWeight.MEDIUM),
                     ),
                   ),
                 ),  SizedBox(
                   height: AppSize.getScreenHeightRatio(height: 3),
                 ),
                 Expanded(
+                  flex: 2,
                     child: Align(
                         alignment: Alignment.bottomCenter,
                         child: LinearPercentIndicator(

@@ -32,23 +32,23 @@ class SectionArea extends StatelessWidget {
             ),
             child: Center(
               child: AutoSizeText(
-                  minFontSize: 17,
-                  maxFontSize: 21,
+                  minFontSize: 16,
+                  maxFontSize: 20,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                   'Summary',
                   style: GoogleFonts.roboto(
                       height: 0,
                       color: appColors.blackColor,
-                      fontSize: 19,
+                      fontSize: 18,
                       fontWeight: AppTextFontWeight.REGULAR)),
             ),
           )),
           SizedBox(width: AppSize.getScreenRadiusRatio(radius: 8),),
           Expanded(
               child: AutoSizeText(
-                  minFontSize: 17,
-                  maxFontSize: 21,
+                  minFontSize: 16,
+                  maxFontSize: 20,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
@@ -56,7 +56,7 @@ class SectionArea extends StatelessWidget {
                   style: GoogleFonts.roboto(
                       height: 0,
                       color: appColors.darkGreyColor,
-                      fontSize: 19,
+                      fontSize: 18,
                       fontWeight: AppTextFontWeight.REGULAR))),
         ],
       ),

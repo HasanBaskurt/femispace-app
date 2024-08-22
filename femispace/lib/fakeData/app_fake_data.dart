@@ -2,6 +2,7 @@ import 'package:femispace/core/constants/app_colors.dart';
 import 'package:femispace/feature/nutritions/model/box_model.dart';
 import 'package:femispace/feature/nutritions/model/row_button_model.dart';
 import 'package:femispace/feature/nutritions/model/summary_box_model.dart';
+import 'package:femispace/feature/nutritions/model/summary_list_model.dart';
 import 'package:flutter/material.dart';
 
 class AppFakeData {
@@ -13,6 +14,31 @@ class AppFakeData {
     RowButtonModel(id: 5, name: 'Favorite recipes', buttonFunction: () {}),
   ];
 
+  static List<SummaryListModel> summaryListModelList = [
+    SummaryListModel(
+        name: 'Fast food & ready to made',
+        percentileValue: 50,
+        positiveValue: true,
+        kcalValue: 1000),
+    SummaryListModel(
+        name: 'Home-cooked',
+        percentileValue: 30,
+        positiveValue: true,
+        kcalValue: 1000),
+    SummaryListModel(
+        name: 'Fine dining',
+        percentileValue: 20,
+        positiveValue: true,
+        kcalValue: 400),
+    SummaryListModel(
+        name: 'Whole plant-based food',
+        percentileValue: 10,
+        positiveValue: true,
+        kcalValue: 200),
+    SummaryListModel(
+        name: 'Organic food', percentileValue: 0, positiveValue: false),
+  ];
+  
   static List<SummaryBoxModel> getSummaryBoxModelList(
       {required AppColors appColors}) {
     List<SummaryBoxModel> fakeSummaryBoxModelList = [

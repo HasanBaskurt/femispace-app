@@ -22,8 +22,8 @@ class RowButtonsArea extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical:  12),
+                  horizontal: 17,
+                  vertical:  10),
                 decoration: BoxDecoration(
                   color: selectedButtonIndex == AppFakeData.rowButtonList[index].id
                       ? appColors.purpleColor
