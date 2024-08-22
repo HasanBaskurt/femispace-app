@@ -26,8 +26,10 @@ class _NutritionsViewState extends State<NutritionsView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _buildBody(),
+    return SafeArea(
+      child: Scaffold(
+        body: _buildBody(),
+      ),
     );
   }
 

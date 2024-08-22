@@ -150,7 +150,7 @@ class NutritionsInformationArea extends StatelessWidget {
                           textAlign: TextAlign.start,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
-                          '/100',
+                          ' /100',
                           style: GoogleFonts.roboto(
                               height: 0,
                               color: appColors.blackColor,

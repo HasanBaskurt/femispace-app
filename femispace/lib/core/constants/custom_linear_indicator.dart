@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:femispace/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomLinearIndicator extends StatelessWidget {
@@ -18,6 +19,7 @@ class CustomLinearIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appColors = AppColors(context: context);
     return ClipRRect(
       borderRadius: BorderRadius.circular(borderRadiusValue ?? 20),
       child: CustomPaint(
@@ -25,7 +27,7 @@ class CustomLinearIndicator extends StatelessWidget {
             backgroundColor: backgroundColor,
             progressColor: progressColor,
             borderRadiusValue: borderRadiusValue,
-            percent: percent),
+            percent: percent, appColors: appColors),
         child: Container(
           height: lineHeight ?? 10,
         ),
@@ -39,20 +41,23 @@ class _LinearIndicatorPainter extends CustomPainter {
   final Color? backgroundColor;
   final Color? progressColor;
   final double? borderRadiusValue;
+  final AppColors appColors;
   _LinearIndicatorPainter(
       {required this.percent,
       required this.backgroundColor,
       required this.progressColor,
-      required this.borderRadiusValue});
+      required this.borderRadiusValue,
+      required this.appColors
+      });
 
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = progressColor ?? Colors.blue
+      ..color = progressColor ?? appColors.blueColor
       ..style = PaintingStyle.fill;
 
     final backgroundPaint = Paint()
-      ..color = backgroundColor ?? Colors.grey.shade300
+      ..color = backgroundColor ?? appColors.whiteColor
       ..style = PaintingStyle.fill;
 
     canvas.drawRRect(
