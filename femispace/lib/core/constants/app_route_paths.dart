@@ -2,4 +2,5 @@
 
 class AppRoutePaths {
   static const String NUTRITIONS_VIEW_PATH = "/nutritions_view_path";
+  static const String SPLASH_VIEW_PATH = "/splash_view_path";
 }
